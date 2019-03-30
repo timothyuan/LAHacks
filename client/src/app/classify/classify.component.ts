@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-classify',
@@ -14,7 +15,7 @@ export class ClassifyComponent implements OnInit {
     { id: 3, symptom: 'headache' }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private httpService: HttpService) {
     const formControls = this.symptoms.map(control => new FormControl(false));
     this.symptomForm = this.fb.group({
       symptoms: new FormArray(formControls)
@@ -28,7 +29,15 @@ export class ClassifyComponent implements OnInit {
     const selectedPreferences = this.symptomForm.value.symptoms
     .map((checked, index) => checked ? this.symptoms[index].id : null)
     .filter(value => value !== null);
-    console.log(selectedPreferences);
+    this.httpService.classify(selectedPreferences).subscribe(
+      result => {
+        console.log(result);
+      },
+      error => {
+        console.log('error');
+        //console.log(error.status);
+      }
+    );
   }
 
 }
