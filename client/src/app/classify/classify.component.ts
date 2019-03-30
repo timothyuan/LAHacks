@@ -10,10 +10,14 @@ import { HttpService } from '../http.service';
 export class ClassifyComponent implements OnInit {
   symptomForm: FormGroup;
   symptoms = [
-    { id: 1, symptom: 'rash' },
-    { id: 2, symptom: 'itch' },
+    { id: 1, symptom: 'rashes' },
+    { id: 2, symptom: 'itching' },
     { id: 3, symptom: 'headache' }
   ];
+  external_text = "Please upload a picture of external symptoms."
+  external_desc = "Optional: describe the uploaded picture";
+  internal_text = "Which symptoms apply to you:";
+  app_name = "skine";
 
   constructor(private fb: FormBuilder, private httpService: HttpService) {
     const formControls = this.symptoms.map(control => new FormControl(false));
@@ -29,6 +33,7 @@ export class ClassifyComponent implements OnInit {
     const selectedPreferences = this.symptomForm.value.symptoms
     .map((checked, index) => checked ? this.symptoms[index].id : null)
     .filter(value => value !== null);
+    this.httpService.uploadImg(this.symptomForm.value.ext_symptom);
     this.httpService.classify(selectedPreferences).subscribe(
       result => {
         console.log(result);

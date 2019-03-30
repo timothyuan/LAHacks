@@ -1,7 +1,30 @@
-<form [formGroup]="symptomForm" (ngSubmit)="submit()">
-  <label formArrayName="symptoms" *ngFor="let symptom of symptomForm.controls.symptoms.controls; let i = index">
+<!DOCTYPE html>
+<html>
+<body>
+<div style="text-align:center">
+  <h1>
+    {{ app_name }}
+  </h1>
+  <br>
+  <h2>
+    {{external_text}}<br>
+  </h2>
+  <form [formGroup]="symptomForm" (ngSubmit)="submit()">
+  <input type="file" name="ext_symptom" accept="image/*"><br><br>
+  <input type="text" name="ext_symptom_desc" accept="text" placeholder="{{external_desc}}">
+
+<h2>
+  {{internal_text}}<br>
+</h2>
+<label formArrayName="symptoms" *ngFor="let symptom of symptomForm.controls.symptoms.controls; let i = index">
     <input type="checkbox" [formControlName]="i">
     {{symptoms[i].symptom}}
-  </label>
-  <button>Submit</button>
+    </label>
+
+<br>
+<button>Diagnose</button>
 </form>
+
+</div>
+</body>
+</html>

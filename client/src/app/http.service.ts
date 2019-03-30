@@ -19,4 +19,10 @@ export class HttpService {
     }
     return this.http.post<string>('http://localhost:3000/classify', data, httpOptions);
   }
+
+  uploadImg(file: File) Observable<any> {
+    let uploadData = new FormData();
+    uploadData.append('file', file);
+    return this.http.post<string>('http://localhost:3000/upload', uploadData);
+  }
 }
