@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-classify',
@@ -6,19 +7,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classify.component.css']
 })
 export class ClassifyComponent implements OnInit {
-  recurring: boolean;
-  internal: string;
-  external: string;
+  symptomForm: FormGroup;
+  symptoms = [
+    { id: 1, symptom: 'rash' },
+    { id: 2, symptom: 'itch' },
+    { id: 3, symptom: 'headache' }
+  ];
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    const formControls = this.symptoms.map(control => new FormControl(false));
+    this.symptomForm = this.fb.group({
+      symptoms: new FormArray(formControls)
+    });
+  }
 
   ngOnInit() {
   }
 
-  print(){
-    console.log(this.internal);
-    console.log(this.external);
-    console.log(this.recurring);
+  submit(){
+    const selectedPreferences = this.symptomForm.value.symptoms
+    .map((checked, index) => checked ? this.symptoms[index].id : null)
+    .filter(value => value !== null);
+    console.log(selectedPreferences);
   }
 
 }

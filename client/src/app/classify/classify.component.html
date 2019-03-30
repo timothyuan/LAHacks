@@ -1,7 +1,7 @@
-<p>
-  classify works!
-</p>
-<input type="text" placeholder="internal" [(ngModel)]="internal" required>
-<input type="text" placeholder="external" [(ngModel)]="external" required>
-<input type="checkbox" [(ngModel)]="recurring"/>
-<button (click)="print()">Print</button>
+<form [formGroup]="symptomForm" (ngSubmit)="submit()">
+  <label formArrayName="symptoms" *ngFor="let symptom of symptomForm.controls.symptoms.controls; let i = index">
+    <input type="checkbox" [formControlName]="i">
+    {{symptoms[i].symptom}}
+  </label>
+  <button>Submit</button>
+</form>
