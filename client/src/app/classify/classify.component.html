@@ -1,5 +1,5 @@
 <form [formGroup]="symptomForm" (ngSubmit)="submit()">
-  <label formArrayName="symptoms" *ngFor="let symptom of symptomForm.controls.symptoms.controls; let i = index">
+  <label formArrayName="symptoms" *ngFor="let symptom of formData.controls; let i = index">
     <input type="checkbox" [formControlName]="i">
     {{symptoms[i].symptom}}
   </label>
