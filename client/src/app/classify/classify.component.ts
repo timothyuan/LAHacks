@@ -45,4 +45,6 @@ export class ClassifyComponent implements OnInit {
     );
   }
 
+  get formData() { return <FormArray>this.symptomForm.get('symptoms'); }
+
 }
