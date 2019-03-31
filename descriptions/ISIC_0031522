@@ -1,0 +1,49 @@
+{
+  "_id": "5aaf1512116597691363e679",
+  "_modelType": "image",
+  "created": "2018-03-19T01:40:34.765000+00:00",
+  "creator": {
+    "_id": "5a95992d116597381f5ebab2",
+    "name": "User 5KJX"
+  },
+  "dataset": {
+    "_accessLevel": 0,
+    "_id": "5aaf6f2a116597691367292e",
+    "description": "Dermatoscopic images of the most common classes of pigmented skin lesions: Pigmented Actinic Keratoses / Bowen's disease, Basal Cell Carcinoma, Benign Keratoses (Seborrheic Keratosis, Solar Lentigo and Lichen-Planus Like Keratosis), Dermatofibroma, Melanocytic Nevi, Melanoma and Vascular lesions. Images are made available in preparation for the \"Human-Against-Machine with 10000 training images\" study, and originate mainly from the ViDIR Group (Department of Dermatology, Medical University of Vienna) and a skin cancer office in Australia (School of Medicine, University of Queensland). Data is provided under the CC BY-NC 4.0 license, attribution should be made by referencing the data descriptor manuscript:\n\nTschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 doi:10.1038/sdata.2018.161 (2018).z",
+    "license": "CC-BY-NC",
+    "name": "HAM10000",
+    "updated": "2018-03-19T08:04:58.812000+00:00"
+  },
+  "meta": {
+    "acquisition": {
+      "image_type": "dermoscopic",
+      "pixelsX": 600,
+      "pixelsY": 450
+    },
+    "clinical": {
+      "age_approx": 70,
+      "anatom_site_general": "anterior torso",
+      "diagnosis": "pigmented benign keratosis",
+      "diagnosis_confirm_type": "histopathology",
+      "melanocytic": false,
+      "sex": "male"
+    },
+    "unstructured": {
+      "lesion_id": "HAM_0005865",
+      "localization": "chest"
+    },
+    "unstructuredExif": {}
+  },
+  "name": "ISIC_0031522",
+  "notes": {
+    "reviewed": {
+      "accepted": true,
+      "time": "2018-03-22T20:01:28.011000+00:00",
+      "userId": "55d4cde89fc3c1490e995086"
+    },
+    "tags": [
+      "Challenge 2018: Task 3: Training"
+    ]
+  },
+  "updated": "2018-03-19T01:40:34.765000+00:00"
+}

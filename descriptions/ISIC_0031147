@@ -1,0 +1,50 @@
+{
+  "_id": "5aaf14ed116597691363d3cb",
+  "_modelType": "image",
+  "created": "2018-03-19T01:39:57.765000+00:00",
+  "creator": {
+    "_id": "5a95992d116597381f5ebab2",
+    "name": "User 5KJX"
+  },
+  "dataset": {
+    "_accessLevel": 0,
+    "_id": "5aaf6f2a116597691367292e",
+    "description": "Dermatoscopic images of the most common classes of pigmented skin lesions: Pigmented Actinic Keratoses / Bowen's disease, Basal Cell Carcinoma, Benign Keratoses (Seborrheic Keratosis, Solar Lentigo and Lichen-Planus Like Keratosis), Dermatofibroma, Melanocytic Nevi, Melanoma and Vascular lesions. Images are made available in preparation for the \"Human-Against-Machine with 10000 training images\" study, and originate mainly from the ViDIR Group (Department of Dermatology, Medical University of Vienna) and a skin cancer office in Australia (School of Medicine, University of Queensland). Data is provided under the CC BY-NC 4.0 license, attribution should be made by referencing the data descriptor manuscript:\n\nTschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 doi:10.1038/sdata.2018.161 (2018).z",
+    "license": "CC-BY-NC",
+    "name": "HAM10000",
+    "updated": "2018-03-19T08:04:58.812000+00:00"
+  },
+  "meta": {
+    "acquisition": {
+      "image_type": "dermoscopic",
+      "pixelsX": 600,
+      "pixelsY": 450
+    },
+    "clinical": {
+      "age_approx": 35,
+      "anatom_site_general": "lower extremity",
+      "benign_malignant": "benign",
+      "diagnosis": "nevus",
+      "diagnosis_confirm_type": "serial imaging showing no change",
+      "melanocytic": true,
+      "sex": "female"
+    },
+    "unstructured": {
+      "lesion_id": "HAM_0003307",
+      "localization": "foot"
+    },
+    "unstructuredExif": {}
+  },
+  "name": "ISIC_0031147",
+  "notes": {
+    "reviewed": {
+      "accepted": true,
+      "time": "2018-03-22T20:00:54.989000+00:00",
+      "userId": "55d4cde89fc3c1490e995086"
+    },
+    "tags": [
+      "Challenge 2018: Task 3: Training"
+    ]
+  },
+  "updated": "2018-03-19T01:39:57.765000+00:00"
+}
