@@ -3,7 +3,6 @@ import pathlib
 import random
 import tensorflow as tf
 from tensorflow import keras
-from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
@@ -13,9 +12,7 @@ import keras.initializers
 
 # import keras
 # import h5py
-
-# from keras.models import load_model
-
+from keras.models import load_model
 
 import cv2
 
@@ -28,9 +25,11 @@ import sys
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+g = open("result.txt", "r+")
+g.truncate(0)
+g.close()
 
 AUTOTUNE = tf.data.experimental.AUTOTUNE
-
 #image and data pre-processing
 
 #data directory for images
@@ -163,34 +162,34 @@ loaded_model.compile(optimizer='adam', loss = 'sparse_categorical_crossentropy',
 
 
 imageS = []
-image_test = cv2.imread(sys.argv[1])
+image_test = cv2.imread('file.jpg')
 image_test = cv2.resize(image_test, (32, 32))
 #image_test = np.expand_dims(image_test) #, axis=0)
 imageS.append(image_test)
 label = 'benign'
 
-i = label_to_index[label]
+# i = label_to_index[label]
 test = []
-test.append(i)
+# test.append(i)
 img_data1 = np.array(imageS, dtype="float")/255.0
-labels1 = np.array(test)
+# labels1 = np.array(test)
 
 pre = loaded_model.predict(img_data1, batch_size=32)
 #loss, acc = loaded_model.evaluate(img_data1, labels1)
 #print(acc)
 #print(labels1)
 
-
+result = ''
 for p in pre:
   n = np.argmax(p)
   if n==0:
-    print('benign')
+    result = 'benign'
   if n==1:
-    print('malignant')
+    result = 'malignant'
 
-
-sys.stdout.flush()
+g = open("result.txt", "w+")
+g.write(result)
+g.close()
 # for p in pre:
 #   print(np.argmax(p))
 # print(train)
-

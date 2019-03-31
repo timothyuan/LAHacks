@@ -11,10 +11,10 @@
     {{external_text}}<br>
   </h2>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="file" name="ext_symptom" accept="image/*"><br><br>
-  <input type="text" name="ext_symptom_desc" placeholder={{external_desc}} size="25"><br><br>
-  <button (click)="submitImg()">Submit Image</button>
-</p>
+  <input type="file" name="ext_symptom" (change)="handleFileInput($event.target.files)"><br><br>
+  <button (click)="submitImg()" [disabled]="fileToUpload==null">Submit Image</button>
+  </p>
+  <h1 *ngIf="result">{{result}}</h1>
 
 <h2>
   {{internal_text}}<br>

@@ -5,15 +5,15 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var spawn = require("child_process").spawn;
+var fs = require('fs');
+
 
 var storage = multer.diskStorage({
 	destination: function (req, file, callback) {
-		callback(null, '../');
+		callback(null, './');
 	},
 	filename: function (req, file, callback) {
-		//console.log("looool")
-		callback(null, 'file.jpeg');
-		//console.log("here's why")
+		callback(null, 'file.jpg');
 	}
 });
 
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/client/'));
 
 app.post('/classify', function(req, res) {
-	var args = ["diagnosis.py"];
+	var args = ['diagnosis.py'];
 	var arr = req.body.values;
 	//console.log(arr);
 	arr.forEach(function(entry) {
@@ -41,13 +41,23 @@ app.post('/classify', function(req, res) {
 })
 
 app.post('/uploadImg', function(req, res){
-  //console.log("but why")
   upload(req, res, function(err) {
-        //qs: { q:isAllowed}}, function(err, response, body){
-  res.status(200).send("success");
+		if(err){
+			console.log(err);
+			res.status(400);
+			res.end();
+		}
   })
-  //res.status(500).send(req.body.values)
-  //res.send("success");
+	var pythonProcess = spawn('python', ['tens.py']);
+	fs.readFile('result.txt', (err, data) => {
+    if (err) throw err;
+    res.send(data.toString());
+	})
+	// pythonProcess.stdout.on('data', (data) => {
+	// 		message = data.toString();
+	// 		console.log(message);
+	// 		res.status(200).send({message: message});
+	// });
 });
 
 app.get('*', function(req, res) {
