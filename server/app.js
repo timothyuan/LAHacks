@@ -28,8 +28,16 @@ app.use(express.static(__dirname + '/client/'));
 
 
 app.post('/classify', function(req, res) {
-  var data = req.body.values;
+  var data = req.body.symptoms;
   console.log(data);
+	//send data back after python  script on array
+	//check take in array
+	//sys std.out flush
+	var pythonProcess = spawn('python',["diagnosis.py", data);
+					pythonProcess.stdout.on('data', (data) => {
+							message = data.toString();
+							res.status(200).send({id: req.body.id, message: message});
+					});
   res.send(data);
 })
 
