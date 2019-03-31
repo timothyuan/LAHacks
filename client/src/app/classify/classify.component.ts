@@ -33,7 +33,20 @@ export class ClassifyComponent implements OnInit {
     const selectedPreferences = this.symptomForm.value.symptoms
     .map((checked, index) => checked ? this.symptoms[index].id : null)
     .filter(value => value !== null);
-    this.httpService.uploadImg(this.symptomForm.value.ext_symptom);
+    const pic = (<HTMLInputElement>document.getElementById('image')).files[0];
+    // console.log(3)
+    // console.log(pic)
+    //console.log(pic.files[0])
+    this.httpService.uploadImg(pic).subscribe(
+      result => {
+        //console.log("success1")
+        console.log(result);
+      },
+      error => {
+        //console.log(typeof(pic));
+        console.log('error');
+      }
+    );
     this.httpService.classify(selectedPreferences).subscribe(
       result => {
         console.log(result);
