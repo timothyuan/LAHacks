@@ -25,7 +25,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/client/'));
 
 app.post('/classify', function(req, res) {
-	var pythonProcess = spawn('python',["diagnosis.py", req.body.value]);
+	var args = ["diagnosis.py"];
+	var arr = req.body.values;
+	//console.log(arr);
+	arr.forEach(function(entry) {
+	    args.push(entry);
+	});
+	console.log(args);
+	var pythonProcess = spawn('python', args);
 	pythonProcess.stdout.on('data', (data) => {
 			message = data.toString();
 			console.log(message);
