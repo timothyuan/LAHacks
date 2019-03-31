@@ -3,37 +3,30 @@
 <body>
 <div style="text-align:center">
   <h1>
-    <img src="assets/top.ico" id="topbg">
+    <!-- <img src="assets/top.ico" id="topbg"> -->
     {{ app_name }}<br>
   </h1>
   <br>
   <h2>
     {{external_text}}<br>
   </h2>
-  <!-- <form [formGroup]="symptomForm" (ngSubmit)="submit()">
   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="file" name="ext_symptom" accept="image/*"><br><br></p>-->
+  <input type="file" name="ext_symptom" accept="image/*"><br><br>
+  <input type="text" name="ext_symptom_desc" placeholder={{external_desc}} size="25"><br><br>
+  <button (click)="submitImg">Submit Image</button>
+</p>
 
-
-  <input [(ngModel)]="searchText" placeholder="search text goes here">
+<h2>
+  {{internal_text}}<br>
+</h2>
+  <input [(ngModel)]="searchText">
   <ul *ngIf="searchText">
     <li *ngFor="let symptom of possibleSymptoms | filter : searchText">
       <button (click)="add(symptom)">{{symptom}}</button>
     </li>
   </ul>
-  <!-- <input type="text" name="ext_symptom_desc" accept="text" placeholder="{{external_desc}}" style="width: 250px;">
-
-<h2>
-  {{internal_text}}<br>
-</h2>
-<label formArrayName="symptoms" *ngFor="let symptom of formData.controls; let i = index">
-    <input type="checkbox" [formControlName]="i">
-    {{symptoms[i].symptom}}
-    </label>
-
-<br><br>-->
-<button (click)="submit()">Diagnose</button>
-<!-- </form>  -->
+<br><br>
+<button (click)="submitInt">Submit Symptoms</button>
 
 </div>
 </body>
