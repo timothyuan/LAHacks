@@ -23,7 +23,8 @@ records = []
 for index in range(0, len(disease_tuple)):
     if(disease_tuple[index] != '\xa0'):
         disease_name = disease_tuple[index]
-    records.append((sympt_tuple[index], disease_name))
+    if(sympt_tuple[index][0] == 'U'):
+        records.append((sympt_tuple[index].split('_')[1], disease_name.split('_')[1]))
     # if(sympt_tuple[index] not in symptom_dictionary.keys()):
     #     symptom_dictionary[sympt_tuple[index]] = [disease_name]
     # else:
