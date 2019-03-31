@@ -1,76 +1,124 @@
-import tensorflow as tf
 from __future__ import absolute_import, division, print_function
+import pathlib
+import random
+import tensorflow as tf
+from tensorflow import keras
+from sklearn.preprocessing import LabelBinarizer
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
 
+
+import cv2
+
+import numpy as np
+#import matplotlib.pyplot as plt
+
+tf.enable_eager_execution()
+
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+
+AUTOTUNE = tf.data.experimental.AUTOTUNE
+
+#image and data pre-processing
+
+#data directory for images
 data_dir = "./ISIC_images"
+#root paths for data
 data_root = pathlib.Path(data_dir)
-# import random
-# all_image_paths = list(data_root.glob('*/*'))
-# all_image_paths = [str(path) for path in all_image_paths]
-# random.shuffle(all_image_paths)
 
+#pathways to images
 for item in data_root.iterdir():
   print(item)
 
+#pathway to each individual image
+all_image_paths = list(data_root.glob('*/*'))
+all_image_paths = [str(path) for path in all_image_paths]
+random.shuffle(all_image_paths)
+
+#verifier that pathways are correct
+for image in all_image_paths:
+  print(image)
+
+#label_names created/generated from filenames
+label_names = sorted(item.name for item in data_root.glob('*/') if item.is_dir())
+print(label_names)
+
+#unnecessary - corresponds each label to a give index
+label_to_index = dict((name, index) for index, name in enumerate(label_names))
+print(label_to_index)
+
+#assigns given medical condition to each image
+all_image_labels = list(pathlib.Path(path).parent.name for path in all_image_paths)
+print("First 10 labels indices: ", all_image_labels[:10])
+
+labels = []
+
+#assigns an array of the corresponding labels
+for label in all_image_labels:
+  labels.append(label)
+
+
+img_data = []
+print(len(all_image_paths))
+for image_path in all_image_paths:
+  image = cv2.imread(image_path)
+  #print(image)
+  #image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+  image = cv2.resize(image, (32, 32)).flatten()
+  print(image.shape)
+  img_data.append(image)
+
+
+img_data = np.array(img_data, dtype="float")/255.0
+labels = np.array(labels)
+
+(trainX, testX, trainY, testY) = train_test_split(img_data, labels, test_size=0.25, random_state=42)
+lb = LabelBinarizer()
+trainY = lb.fit_transform(trainY)
+testY=lb.transform(testY)
+
+
+train = []
+for p in trainY:
+  train.append(np.argmax(p))
+print(train)
+
+train = np.array(train)
+
+
+
+model = keras.Sequential([
+  keras.layers.Dense(1024, input_shape=(3072,), activation="relu"),
+  keras.layers.Dense(4, activation="softmax" ),
+
+])
+
+sgd = keras.optimizers.SGD(lr=0.1, decay=1e-6, momentum=0.9, nesterov=True)
+
+model.compile(optimizer='sgd', loss = 'sparse_categorical_crossentropy', metrics=['accuracy'])
 
 
 
 
-#img_tensor = tf.image.decode_image(img_raw)
-#
-# train_images;
-# train_labels;
-# # create the training datasets
-# dx_train = tf.data.Dataset.from_tensor_slices(train_images)
-# # apply a one-hot transformation to each label for use in the neural network
-# dy_train = tf.data.Dataset.from_tensor_slices(train_labels).map(lambda z: tf.one_hot(z, 10))
-# # zip the x and y training data together and shuffle, batch etc.
-# train_dataset = tf.data.Dataset.zip((dx_train, dy_train)).shuffle(500).repeat().batch(30)
-#
-# iterator = tf.data.Iterator.from_structure(train_dataset.output_types,
-#                                                train_dataset.output_shapes)
-# next_element = iterator.get_next()
-#
-# training_init_op = iterator.make_initializer(train_dataset)
-#
-# def nn_model(in_data):
-#     bn = tf.layers.batch_normalization(in_data)
-#     fc1 = tf.layers.dense(bn, 900)
-#     fc = tf.reshape(fc1["x"], [-1, 30, 30, 1])
-#     # Convolutional Layer #1
-#   conv1 = tf.layers.conv2d(
-#       inputs=fc,
-#       filters=32,
-#       kernel_size=[5, 5],
-#       padding="same",
-#       activation=tf.nn.relu)
-#
-#       # Pooling Layer #1
-#       pool1 = tf.layers.max_pooling2d(inputs=conv1, pool_size=[2, 2], strides=1)
-#     fc2 = tf.layers.dense(pool1, 50)
-#     fc3 = tf.layers.dense(fc2, 19)
-#     return fc3
-# # create the neural network model
-# logits = nn_model(next_element[0])
-#
-# # add the optimizer and loss
-# loss = tf.reduce_sum(tf.nn.softmax_cross_entropy_with_logits_v2(labels=next_element[1], logits=logits))
-# optimizer = tf.train.AdamOptimizer().minimize(loss)
-# # get accuracy
-# prediction = tf.argmax(logits, 1)
-# equality = tf.equal(prediction, tf.argmax(next_element[1], 1))
-# accuracy = tf.reduce_mean(tf.cast(equality, tf.float32))
-# init_op = tf.global_variables_initializer()
-#
-#
-# # run the training
-# epochs = 500
-# with tf.Session() as sess:
-#     sess.run(init_op)
-#     sess.run(training_init_op)
-#     for i in range(epochs):
-#         l, _, acc = sess.run([loss, optimizer, accuracy])
-#         if i % 50 == 0:
-#             print("Epoch: {}, loss: {:.3f}, training accuracy: {:.2f}%".format(i, l, acc * 100))
-#
-# print("Hello World")
-# print("test")
+model.fit(trainX, train, epochs=5, batch_size=32)
+
+predictions = model.predict(testX, batch_size=32)
+
+train = []
+for p in testY:
+  train.append(np.argmax(p))
+
+train = np.array(train)
+
+#print(classification_report(train.argmax(axis=1), predictions.argmax(axis=1), target_names=lb.classes_))
+
+test_loss, test_acc = model.evaluate(testX, train)
+print(test_acc)
+
+
+for p in predictions:
+  print(np.argmax(p))
+print(train)
+
