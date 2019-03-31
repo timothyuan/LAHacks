@@ -19,6 +19,7 @@ export class ClassifyComponent implements OnInit {
   internal_text = "Which symptoms apply to you:";
   app_name = "skine";
 
+
   constructor(private fb: FormBuilder, private httpService: HttpService) {
     const formControls = this.symptoms.map(control => new FormControl(false));
     this.symptomForm = this.fb.group({

@@ -3,22 +3,25 @@
 <body>
 <div style="text-align:center">
   <h1>
-    {{ app_name }}
+    <img src="assets/top.ico" id="topbg">
+    {{ app_name }}<br>
   </h1>
   <br>
   <h2>
     {{external_text}}<br>
   </h2>
   <form [formGroup]="symptomForm" (ngSubmit)="submit()">
-  <input type="file" name="ext_symptom" accept="image/*" id="image"><br><br>
-  <input type="text" name="ext_symptom_desc" accept="text" placeholder="{{external_desc}}">
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="file" name="ext_symptom" accept="image/*"><br><br></p>
 
-<!--remove later pls-->
-  <!-- <form enctype="multipart/form-data" action="/upload" method="post">
-  Username: <input type="text" name="username" />
-  <input type="file" name="file" />
-  <input type="submit" value="Upload Image" name="submit" />
-</form> -->
+
+  <input [(ngModel)]="searchText" placeholder="search text goes here">
+  <ul>
+    <li *ngFor="let c of characters | filter : searchText">
+      {{c}}
+    </li>
+  </ul>
+  <input type="text" name="ext_symptom_desc" accept="text" placeholder="{{external_desc}}" style="width: 250px;">
 
 <h2>
   {{internal_text}}<br>
@@ -28,7 +31,7 @@
     {{symptoms[i].symptom}}
     </label>
 
-<br>
+<br><br>
 <button>Diagnose</button>
 </form>
 
