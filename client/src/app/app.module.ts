@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ClassifyComponent } from './classify/classify.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

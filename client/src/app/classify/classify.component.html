@@ -3,15 +3,590 @@
 <body>
 <div style="text-align:center">
   <h1>
-    {{ app_name }}
+    <img src="assets/top.ico" id="topbg">
+    {{ app_name }}<br>
   </h1>
   <br>
   <h2>
     {{external_text}}<br>
   </h2>
   <form [formGroup]="symptomForm" (ngSubmit)="submit()">
-  <input type="file" name="ext_symptom" accept="image/*"><br><br>
-  <input type="text" name="ext_symptom_desc" accept="text" placeholder="{{external_desc}}">
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="file" name="ext_symptom" accept="image/*"><br><br></p>
+
+
+<app-name-editor></app-name-editor>
+  <mat-form-field>
+    <input type="text" matInput [formControl]="myControl">
+  </mat-form-field>
+
+  <mat-autocomplete>
+    <mat-option *ngFor="let option of options" [value]="option">Abdominal Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Abnormal Facial Expressions</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Abscessed Tooth Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Absence of Speech (Loss of Speech)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Acid Reflux (GERD) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Acute Sinusitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Addison's Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">ADHD (Inattention)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">ADHD Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Age-Related Macular Degeneration (Macular Degeneration Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Alcohol Poisoning Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Alcohol Withdrawal Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Allergy</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Altered Mental Status</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Alveolar Osteitis (Dry Socket Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Alzheimer's Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Amblyopia (Lazy Eye) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Anal Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Anal Itching</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Anaphylaxis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Anemia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Angle-Closure Glaucoma (Glaucoma Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Angular Cheilitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Ankle Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Ankylosing Spondylitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Anorexia Nervosa Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Anxiety</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Aphasia (Loss of Speech)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Appendicitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Arachnoiditis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">ARDS Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Arm Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Arrhythmia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Arteriovenous Malformation Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Asthenopia (Eyestrain Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Asthma Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Astigmatism Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Atrial fibrillation (AFib) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Atrial Flutter Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Attention Deficit (Inattention)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Autism Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Avian Influenza (Bird Flu (Avian Influenza) Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Back Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bad Breath</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bad Taste in the Mouth</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Basal Cell Carcinoma (Skin Cancer Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Beau's Lines</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bedwetting (Nocturnal Enuresis) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Behavior Disorder (Unusual Behavior)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Benign Positional Vertigo Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Binge Eating Disorder Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bipolar Disorder Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bird Flu (Avian Influenza) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bladder Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bladder Infection Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bladder Spasms</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bleeding Gums</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Blepharitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Blisters</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Blood Clot in the Lung (Pulmonary Embolism Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Blood Clot Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Blood in Semen</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Blood In Urine</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bloody Nose</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bloody Sputum</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Blunted Affect (Flat Affect)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Blurred Vision</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bone Loss (Osteopenia)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Borderline Personality Disorder Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bowel Incontinence (Fecal Incontinence)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Brain Aneurysm Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Brain Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Brain Trauma (Concussion Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Brain Tumor Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Breast Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Breast Discharge</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Breast Lumps</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Breast Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Breast Swelling (Swollen Breast)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Brittle Nails</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bronchitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bulimia Nervosa Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bumps on Skin</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Burn Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Burning Mouth Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Burning Urination</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Bursitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Buttock Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cancer, Throat (Throat Cancer Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Carbon Monoxide Poisoning Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cardiomyopathy Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Carpal Tunnel Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cat Scratch Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cataract Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Catatonia (Catatonic Behavior)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cauda Equina Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cellulitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cerebral Palsy Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cervical Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chalazion Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Changes in Skin of the Breast</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chapped Lips (Cheilitis)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Charcot-Marie-Tooth Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chest Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chest Tightness (Tightness in Chest)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chills</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chlamydia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chronic Fatigue Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chronic Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Chronic Sore Throat Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cloudy Urine</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cobalamin Deficiency (Vitamin B12 Deficiency Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Coccydynia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cold</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cold Agglutinin Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cold Feet</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cold Fingers</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cold Hands</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Colic Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Colitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Colon Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Color Blindness Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Complex Regional Pain Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Concussion Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Confusion</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Conjunctival Granuloma (Chalazion Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Constipation</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Contact Dermatitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">COPD Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cough</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Creaking Joints (Joint Cracking)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Crohn's Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Croup Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cyanosis/Turning Blue</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Cystic Fibrosis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dark Circles Under the Eyes</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dark Urine</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Decreased Appetite</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Decreased Bone Density (Osteopenia)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dehydration Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Delirium</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Delusions</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dengue Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Depigmentation of Skin</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Depression</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Detached Retina (Retinal Detachment Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Detrusor Contraction (Bladder Spasms)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Diabetes Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Diabetic Ketoacidosis (DKA) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Diarrhea</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Difficulty Concentrating</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Difficulty Urinating</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Difficulty With Speech</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dilated Pupils (Mydriasis)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dimpled Breast (Peau d'Orange)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Diogenes Syndrome (Self-Neglect)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Diphtheria Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Discharge From Penis (Penile Discharge)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Distended Stomach (Abdominal Distention)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Distractibility</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Diverticulitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dizziness</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Double Vision</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Down Syndrome</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Drainage of Pus</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Drooling</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Drug Use Disorder Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dry AMD (Macular Degeneration Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dry Eye</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dry Mouth</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dry Skin</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dry Socket Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dysarthria</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dyspepsia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dysphagia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Dystonia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">E. coli 0157:H7 (Escherichia coli 0157:H7)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">EAEC (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">EAggEC (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Earache</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Easy Bruising</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Ebola Virus Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Echolalia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Echologia (Echolalia)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Echophrasia (Echolalia)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">EHEC (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">EIEC (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Elbow Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Elevated Blood Sugar (High Blood Sugar Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Emotional Disorder (Inability to Regulate Emotions)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Encephalitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Endocarditis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Endometrial Cancer (Uterine (Endometrial) Cancer Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Endometriosis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enlarged Heart</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enteroadherent E. coli (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enteroaggregative E. coli (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enterohemorrhagic E. coli (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enteroinvasive E. coli (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enteropathogenic E. coli (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enterotoxigenic E. coli (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enterovirus D68 (Non-Polio Enterovirus Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Enthesitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">EPEC (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">ETEC (E. coli 0157:H7 (Escherichia coli 0157:H7))</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Euphoria</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">EV-D68 (Non-Polio Enterovirus Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Excessive Sweating</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Excessive Yawning (Yawning)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Exercise-Induced Asthma Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">External Otitis (Swimmer's Ear (Otitis Externa) Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Eye Discharge</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Eye Floaters</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Eye Herpes (Ocular Herpes Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Eye Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Eye Twitch</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Eyestrain Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Fainting</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Farsightedness (Hyperopia) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Fatigue and Tiredness</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Fecal Incontinence</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Fever</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Fever, Zika (Zika Virus Infection Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Fibromyalgia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Finger Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Flaky Scalp</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Flat Affect</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Flu</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Fluctuating Mood (Mood Swings)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Food Allergy Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Foot Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Foreign Body in the Eye Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Frequent Urination</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gallbladder Attack Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gallstones Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gas</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gastritis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gastroenteritis (Stomach Flu) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Generalized Anxiety Disorder Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Genital Warts Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Giardiasis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gilbert Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gingivitis (Gum Disease Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Glaucoma Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gout Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Groin Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Guillain-Barre Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gum Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Gum Pain (Pericoronitis Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hair Loss</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hairy Tongue</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hallucinations</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hand Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hand, Foot, and Mouth Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Headache</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hearing Loss</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Heart Attack in Men Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Heart Attack in Women Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Heart Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Heart Failure Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Heartburn</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Heel Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Helicobacter pylori (H. pylori) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hemolysis</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hemolytic Anemia (Hemolysis)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Henoch-Schonlein Purpura Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hepatitis B Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hepatitis C (HCV) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hepatitis E Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Herpes Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Herpes Viral Infections of the Eye (Ocular Herpes Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hiatal Hernia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hiccups</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">High Blood Pressure Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">High Blood Sugar Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hip Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">HIV Infection Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hoarseness</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hot Flashes</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Huntington's Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hydrocele Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hyperactivity</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hyperthermia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hyperthyroidism Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hyperventilation</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hypocalcemia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hypoglycemia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hypopituitarism Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hypothermia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Hypothyroidism Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Illness Anxiety Disorder (Hypochondria)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Impetigo Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Impingement Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Impotence</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Impulsivity</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Inability to Regulate Emotions</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Inattention</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Incontinence, Urine</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Increased Appetite</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Infectious Mononucleosis (Mono) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Infertility</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Inflammation of the Cornea (Keratitis Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Inflammation of the Larynx (Laryngitis)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Inflammation of the Sclera (Scleritis Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Inflammatory Bowel Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Insomnia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Insulin Resistance Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Interstitial Cystitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Intertrigo Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Invaginated Nipple (Inverted Nipple)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Inverted Nipple</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Irritable Bowel Syndrome (IBS) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Itch</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Jaundice</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Jaw Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Joint Cracking</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Joint Deformity</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Joint Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Joint Popping (Joint Cracking)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Joint Redness</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Joint Stiffness</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Joint Warmth</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Kawasaki Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Keratitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Keratoconus Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Kidney Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Kidney Failure</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Kidney Infection Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Kidney Stone Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Knee Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Knee Swelling (Swollen Knee)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Koilonychia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Labile Mood (Inability to Regulate Emotions)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lack of Facial Expressions</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lactase Deficiency (Lactose Intolerance Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lactose Intolerance Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Laryngitis</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lead Poisoning Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Leg Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Leg Sores</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Leg Swelling</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Leukemia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Limping</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Liver Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Loss of Appetite</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Loss of Speech</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Loss of Taste Sensation</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Loss of Temperature Sensation</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Low Blood Pressure Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Low Blood Sugar (Hypoglycemia Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Low Libido</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Low Testosterone (Low T)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Low Urine Output</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lump or Mass on Gums</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lung Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lupus Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lyme Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lymph Node Swelling (Swollen Lymph Nodes)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Lymphedema Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Macular Degeneration Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Malaria Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Malnutrition Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Mania Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Mastitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Measles (Rubeola) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Meibomian Cyst (Chalazion Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Melanoma Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Memory Loss</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Meniere's Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Meningitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Menopause Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Menstrual Cramps</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Mesothelioma Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Metallic Taste in the Mouth</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Middle Ear Infection Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Migraine Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Miscarriage Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Missed Menstrual Period</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Mood Swings</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Morning Sickness Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Motor Tics (Tic)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Mouth Sores</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">MRSA Infection Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Multiple Myeloma Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Multiple Sclerosis (MS) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Mumps Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Muscle Cramps</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Muscle Pain (Myalgia)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Muscle Spasticity (Spasticity)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Mutism (Loss of Speech)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Myopia (Nearsightedness) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nail Clubbing</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nail Discoloration</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nail Fungus (Onychomycosis) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nail Pitting</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nail Separation</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Narcissistic Personality Disorder Symptoms Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nasal Congestion</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nausea</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Neck Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Neglecting Oneself (Self-Neglect)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Neonatal Jaundice</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nipple Inversion (Inverted Nipple)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nipple Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Nipple Retraction (Inverted Nipple)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Non-Polio Enterovirus Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Numbness Fingers</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Numbness or Tingling Sensation in the Tongue</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Numbness Toes</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Obsessive-Compulsive Disorder Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Ocular Herpes Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Onychorrhexis (Vertical Ridges on the Fingernails)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Open-Angle Glaucoma (Glaucoma Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Oral Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Osteoarthritis (OA) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Osteopenia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Osteoporosis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Ovarian Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Ovarian Cyst</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Overactive Bladder (Bladder Spasms)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Overactive Bladder (OAB) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pain in the Penis (Penile Pain)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Painful Gums</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Painful Intercourse</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pale Skin</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Palpitations</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pancreatic Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pancreatitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Panic Attack Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Paralysis</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Paraneoplastic Syndrome Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Paranoia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Parkinson's Disease Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Peau d'Orange</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Peeling Skin</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pelvic Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Penile Discharge</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Penile Itching</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Penile Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pericoronitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Periodontitis (Gum Disease Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Peripheral Neuropathy</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Phlebitis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Photophobia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pigmented Villonodular Synovitis Symptoms and Sign</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pink Eye</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pleurisy</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">PMS (Premenstrual Syndrome) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pneumonia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Polycystic Kidney Disease (PKD) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Poor Hygiene</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Poor Nutrition (Malnutrition Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Postnasal Drip Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Postpartum Depression Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pregnancy Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Prostate Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Proteinuria (Protein in the Urine)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pruritus Ani (Anal Itching)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Psoriasis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Psoriatic Arthritis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Ptosis</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Pulmonary Embolism Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Rash</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Rectal Bleeding</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Rectal Incontinence (Fecal Incontinence)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Rectal Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Red Gums (Pericoronitis Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Red Spots on the Skin</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Red Streaks on the Skin</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Restless Leg Syndrome</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Retinal Detachment Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Rheumatoid Arthritis (RA) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Ringing in Ears</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Roseola Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Rubella (German Measles) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Runny Nose</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Scarlet Fever Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Schizophrenia Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Scleritis Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Seizures</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Self-Neglect</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Shaking Hands (Hand Tremors)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Shingles Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Shortness of Breath</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Shoulder Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Sinus Infection (Sinusitis) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Skin Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Sleep Apnea Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Small Intestine Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Sneezing</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Snoring</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Sore Throat</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Sore Tongue</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Spasticity</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Spoon-Shaped Fingernails (Koilonychia)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Squamous Cell Cancer (Skin Cancer Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Squamous Cell Carcinoma (Skin Cancer Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Sternutation (Sneezing)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Stiff Neck</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Stomach Cramps</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Stomach Ulcer (Peptic Ulcer) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Stool Color & Texture Changes</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Strange Behavior (Unusual Behavior)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Strep Throat Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Stroke Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Sty Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Subconjunctival Hemorrhage Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Suicide</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swimmer's Ear (Otitis Externa) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swine Flu Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Ankles and/or Swollen Feet</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Breast</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Eyes</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Gums (Pericoronitis Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Joints</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Knee</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Lip</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Lymph Nodes</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Testicles</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Tongue</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Swollen Tonsils</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Tachycardia</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Tension Pneumothorax</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Testicular Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Testicular Swelling (Swollen Testicles)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Thirst</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Throat Cancer Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Thrush (Oral Candidiasis) Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Tic</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Tightness in Chest</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Tingling in Hands and Feet</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Toe Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Toothache</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Traumatic Brain Injury (Concussion Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Tremor</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Tuberculosis (TB)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Tunnel Vision</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vaginal Bleeding</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vaginal Discharge</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vaginal Dryness</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vaginal Itching</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vaginal Odor</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vaginal Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vaginal Yeast Infection Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vertical Ridges on the Fingernails</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vertigo</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vision Loss</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vitamin B12 Deficiency Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vocal Outbursts</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vocal Tics (Tic)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vomiting</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Vomiting Blood</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Watery Eye</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Weakness</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Weight Gain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Weight Loss</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">West Nile Virus Symptoms and Signs</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Wet AMD (Macular Degeneration Symptoms and Signs)</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Wheezing</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">White Tongue</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Wrist Pain</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Yawning</mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">Zika Virus Infection Symptoms and Signs</mat-option>
+</mat-form-field>
+
+  <input type="text" name="ext_symptom_desc" accept="text" placeholder="{{external_desc}}" style="width: 250px;">
 
 <h2>
   {{internal_text}}<br>
@@ -21,7 +596,7 @@
     {{symptoms[i].symptom}}
     </label>
 
-<br>
+<br><br>
 <button>Diagnose</button>
 </form>
 
