@@ -3,7 +3,7 @@
 <body>
 <div style="text-align:center">
   <h1>
-    <img src="assets/top.ico" id="topbg">
+    <!-- <img src="assets/top.ico" id="topbg"> -->
     {{ app_name }}<br>
   </h1>
   <br>
@@ -12,6 +12,8 @@
   </h2>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="file" name="ext_symptom" accept="image/*"><br><br>
+  <input type="text" name="ext_symptom_desc" placeholder={{external_desc}} size="25"><br><br>
+  <button (click)="submitImg">Submit Image</button>
 </p>
 
 <h2>
@@ -24,7 +26,7 @@
     </li>
   </ul>
 <br><br>
-<button (click)="submit()">Diagnose</button>
+<button (click)="submitInt">Submit Symptoms</button>
 
 </div>
 </body>
