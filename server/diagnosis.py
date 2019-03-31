@@ -1,40 +1,10 @@
-from __future__ import absolute_import, division, print_function
-import pathlib
-import random
-import tensorflow as tf
-from tensorflow import keras
-from sklearn.preprocessing import LabelBinarizer
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
-
 import csv
-import cv2
-
-import numpy as np
-#import matplotlib.pyplot as plt
-
-tf.enable_eager_execution()
-
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
-
-AUTOTUNE = tf.data.experimental.AUTOTUNE
-
-#image and data pre-processing
-
-
-
-
 import sys
 
-
-#TO DO FOR TIMOTHY
-#   get array of symptoms 2D train
 results = []
 with open("disease_db.csv") as csvfile:
     reader = csv.reader(csvfile)
-    for row in reader: # each row is a list
+    for row in reader:
         results.append(row)
 
 dict = {}
@@ -54,7 +24,12 @@ for arg in sys.argv[1:]:
             diseases[item]=1
 
 lst = sorted(diseases, key=lambda x: -diseases[x])
-print(lst);
+ls = []
+for item in lst:
+    item = item.replace('\n', '')
+    ls.append(item)
+print(ls)
+sys.stdout.flush()
 
 # labels= list(dict)
 # #print(labels[0])
