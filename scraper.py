@@ -24,7 +24,15 @@ for index in range(0, len(disease_tuple)):
     if(disease_tuple[index] != '\xa0'):
         disease_name = disease_tuple[index]
     if(sympt_tuple[index][0] == 'U'):
-        records.append((sympt_tuple[index].split('_')[1], disease_name.split('_')[1]))
+        if(disease_name.find('^') != -1 and sympt_tuple[index].split('_')[1].find('^') != -1):
+            records.append((sympt_tuple[index].split('_')[1][0:sympt_tuple[index].split('_')[1].find('^')], disease_name.split('_')[1][0:disease_name.split('_')[1].find('^')]))
+        elif(disease_name.find('^') != -1):
+            records.append((sympt_tuple[index].split('_')[1], disease_name.split('_')[1][0:disease_name.split('_')[1].find('^')]))
+        elif(sympt_tuple[index].split('_')[1].find('^') != -1):
+            records.append((sympt_tuple[index].split('_')[1][0:sympt_tuple[index].split('_')[1].find('^')], disease_name.split('_')[1]))
+        else:
+            records.append((sympt_tuple[index].split('_')[1], disease_name.split('_')[1]))
+
     # if(sympt_tuple[index] not in symptom_dictionary.keys()):
     #     symptom_dictionary[sympt_tuple[index]] = [disease_name]
     # else:
