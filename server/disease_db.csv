@@ -1,10 +1,10 @@
-Heberden's node,"edema
+Heberdens node,"edema
   pulmonary"
-Murphy's sign,cholecystitis
-Stahli's line,hemiparesis
-Stahli's line,"hypertension
+Murphys sign,cholecystitis
+Stahlis line,hemiparesis
+Stahlis line,"hypertension
   pulmonary"
-Stahli's line,"transient
+Stahlis line,"transient
   ischemic attack"
 abdomen acute,ileus
 abdominal bloating,candidiasis
@@ -44,7 +44,7 @@ ache,"hepatitis
 ache,"malignant
   neoplasm of lung"
 adverse reaction,candidiasis
-agitation,"Alzheimer's
+agitation,"Alzheimers
   disease"
 agitation,"anxiety
   state"
@@ -216,7 +216,7 @@ awakening early,colitis
 awakening early,neuropathy
 barking cough,"upper
   respiratory infection"
-bedridden,"Alzheimer's
+bedridden,"Alzheimers
   disease"
 bedridden,"affect
   labile"
@@ -400,7 +400,7 @@ clumsiness,"transient
 colic abdominal,cholecystitis
 colic abdominal,diverticulitis
 colic abdominal,pancytopenia
-consciousness clear,"Alzheimer's
+consciousness clear,"Alzheimers
   disease"
 consciousness clear,"anxiety
   state"
@@ -426,7 +426,7 @@ constipation,"malignant
   tumor of colon"
 coordination abnormal,"emphysema
   pulmonary"
-cough,"Alzheimer's
+cough,"Alzheimers
   disease"
 cough,"acquired
   immuno-deficiency
@@ -628,7 +628,7 @@ dizziness,"migraine
   disorders"
 dizzy spells,"malignant
   tumor of colon"
-drool,"Alzheimer's
+drool,"Alzheimers
   disease"
 drowsiness,"degenerative
   polyarthritis"
@@ -797,7 +797,7 @@ extreme exhaustion,"pneumonia
 "facial
   paresis","accident
   cerebrovascular"
-facial paresis,"Alzheimer's
+facial paresis,"Alzheimers
   disease"
 facial paresis,aphasia
 facial paresis,dementia
@@ -893,7 +893,7 @@ feeling suicidal,"psychotic
   disorder"
 feels hot/feverish,"obesity
   morbid"
-fever,"Alzheimer's
+fever,"Alzheimers
   disease"
 fever,"acquired
   immuno-deficiency
@@ -968,7 +968,7 @@ formication,"malignant
   neoplasm of breast"
 formication,"suicide
   attempt"
-frail,"Alzheimer's
+frail,"Alzheimers
   disease"
 frail,"decubitus
   ulcer"
@@ -1012,7 +1012,7 @@ green sputum,colitis
 green sputum,influenza
 green sputum,"sickle
   cell anemia"
-groggy,"Alzheimer's
+groggy,"Alzheimers
   disease"
 groggy,cholecystitis
 guaiac positive,anemia
@@ -1241,7 +1241,7 @@ hyperemesis,"malignant
   tumor of colon"
 hyperhidrosis disorder,"bipolar
   disorder"
-hyperkalemia,"Alzheimer's
+hyperkalemia,"Alzheimers
   disease"
 hyperkalemia,"chronic
   kidney failure"
@@ -1582,7 +1582,7 @@ muscle hypotonia,"acquired
   syndrome"
 muscle hypotonia,"fibroid
   tumor"
-muscle twitch,"Alzheimer's
+muscle twitch,"Alzheimers
   disease"
 muscle twitch,aphasia
 muscle twitch,confusion
@@ -1688,7 +1688,7 @@ night sweat,"parkinson
   disease"
 night sweat,"upper
   respiratory infection"
-nightmare,"Alzheimer's
+nightmare,"Alzheimers
   disease"
 nightmare,"anxiety
   state"
@@ -2011,7 +2011,7 @@ photophobia,exanthema
 photophobia,"hernia
   hiatal"
 photopsia,hyperlipidemia
-pin-point pupils,"Alzheimer's
+pin-point pupils,"Alzheimers
   disease"
 "pleuritic
   pain",asthma
@@ -2194,7 +2194,7 @@ retch,gastroenteritis
 retropulsion,"malignant
   neoplasm of breast"
 rhd positive,neutropenia
-rhonchus,"Alzheimer's
+rhonchus,"Alzheimers
   disease"
 rhonchus,anemia
 rhonchus,dementia
@@ -2643,7 +2643,7 @@ transaminitis,"pneumonia
   aspiration"
 transsexual,"personality
   disorder"
-tremor,"Alzheimer's
+tremor,"Alzheimers
   disease"
 tremor,"anxiety
   state"
@@ -2665,7 +2665,7 @@ tremor,"suicide
   attempt"
 tremor,"tonic-clonic
   epilepsy"
-tremor resting,"Alzheimer's
+tremor resting,"Alzheimers
   disease"
 tumor cell invasion,anemia
 tumor cell invasion,carcinoma
@@ -2844,7 +2844,7 @@ weight gain,"overload
 weight gain,"paroxysmal
   dyspnea"
 welt,lymphoma
-wheelchair bound,"Alzheimer's
+wheelchair bound,"Alzheimers
   disease"
 wheelchair bound,epilepsy
 wheelchair bound,"hepatitis
