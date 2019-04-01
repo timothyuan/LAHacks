@@ -7,13 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
 import { AppComponent } from './app.component';
 import { ClassifyComponent } from './classify/classify.component';
+import { Home_DirectoryComponent } from './home_directory/home_directory.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ClassifyComponent,
-    FilterPipe
+    FilterPipe,
+    Home_DirectoryComponent
+
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,8 @@ import { ClassifyComponent } from './classify/classify.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/classify', pathMatch: 'full' },
+      //{ path: '', redirectTo: '/classify', pathMatch: 'full' },
+      {path: '', component: Home_DirectoryComponent},
       { path: 'classify', component: ClassifyComponent},
     ])
   ],

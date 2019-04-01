@@ -1,0 +1,52 @@
+.homestyle
+{
+    background: url(https://alpha.aeon.co/images/2690342c-5db7-4129-b194-b56c172dae8e/idea_sized-8a38508u.jpg);
+    height: 500px;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+.homestyle:before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(9, 9, 75) 35%, rgb(3, 37, 44) 100%, 100);
+    z-index: -1;
+  }
+.homestyle::after{
+    content: "";
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(9, 9, 75) 35%, rgb(3, 37, 44) 100%);
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+}
+.h1text
+{
+    padding-top: 150px;
+    padding-bottom:20px;
+}
+.information
+{
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 80px
+}
+.subtext
+{
+    font-size: 14px;
+    padding-bottom:20px;
+}
+.informationheader
+{
+    padding-top: 75px;
+}
+.infotext
+{
+    padding-top: 50px; 
+}

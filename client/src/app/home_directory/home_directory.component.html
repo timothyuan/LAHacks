@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand"><button class="clearbutton" onclick="window.location.href = 'http://localhost:4200/';">MEDME</button></a>
+        <form class="form-inline">
+          <a class="navbar-brand" style="font-size: 12px"><button class="clearbutton" onclick="window.location.href = 'http://localhost:4200/#target';">HOW IT WORKS</button></a>
+          <button class="button" style="font-size: 12px" onclick="window.location.href = 'http://localhost:4200/classify';">FIND DIAGNOSIS </button>
+        </form>
+      </nav>
+      <div class="homestyle">
+          <h1 class="h1text">PRELIMINARY DIAGNOSIS</h1>
+          <h6 class="subtext">Understand in a quick, at home format, the potential issues you may be facing</h6>
+          <button class="button" onclick="window.location.href = 'http://localhost:4200/classify';">USE IMAGE</button>
+          <button class="button" onclick="window.location.href = 'http://localhost:4200/classify';">DIAGNOSIS</button>
+      </div>
+      <div class="information">
+          <h1 class="informationheader"><a id="target"><b>HOW IT WORKS</b></a></h1>
+          <p class="infotext" style="float:left">This application uses the comprehensive ISIC database to analyze the skin<br/>of users to determine skin condition. Addtionally, it uses information from <br/>to determine common ailments.
+        Using a machine learning model to comprehend the <br/>various benign and malignant images and identify to a high degree of accuracy<br/>
+    the categorization of the user image. Using a comprehensive symptom-to-ailment <br/> dataset obtained from scraping, we identify users' ailments by comparisons <br/>
+of keywords.</p>
+          <p style="float: right"><img src="https://cdn.pixabay.com/photo/2016/12/09/18/30/database-schema-1895779__340.png"></p>
+      </div>
+</body>
+</html>

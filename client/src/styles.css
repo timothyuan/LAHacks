@@ -1,41 +1,52 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
 body {
     color: black;
     font-family: "Lucida Console", monospace;
+    background-color: lightgray
 }
 h1 {
-  font-size: 3em;
+  font-size: 2em;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 .button {
-  background-color: rgb(255, 198, 247);
-  border: black;
+  background-color: rgb(121, 32, 32);
+  border: rgb(248, 244, 244);
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  padding: 8px 50px;
+  border-radius: 2px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
-.button:hover {background-color: #3e8e41}
+
+.clearbutton {
+  background-color: rgba(121, 32, 32, 0);
+  border: 0px
+}
+
+.button:hover {background-color: darkred}
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: darkred;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-#text {
-  width: 50%;
-}
-#topbg {
+#bg {
   position: fixed;
   top: 0;
   left: 0;
-  background-size: cover;
-  width: 100%;
-  height: 20%;
+
+  min-width: 100%;
+  min-height: 100%;
 
   z-index: -1;
 }
