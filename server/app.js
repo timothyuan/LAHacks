@@ -31,7 +31,7 @@ app.post('/classify', function(req, res) {
 	arr.forEach(function(entry) {
 	    args.push(entry);
 	});
-	console.log(args);
+	//console.log(args);
 	var pythonProcess = spawn('python', args);
 	pythonProcess.stdout.on('data', (data) => {
 			message = data.toString();
