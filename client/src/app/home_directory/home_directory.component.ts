@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home_directory.component.css']
 })
 export class Home_DirectoryComponent {
-  title = 'client';
+  
 }

@@ -25,8 +25,8 @@ import { Home_DirectoryComponent } from './home_directory/home_directory.compone
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      //{ path: '', redirectTo: '/classify', pathMatch: 'full' },
-      {path: '', component: Home_DirectoryComponent},
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      {path: 'home', component: Home_DirectoryComponent},
       { path: 'classify', component: ClassifyComponent},
     ])
   ],

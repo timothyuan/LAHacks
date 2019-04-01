@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand"><button class="clearbutton" onclick="window.location.href = 'http://localhost:4200/';">MEDME</button></a>
-        <form class="form-inline">
-          <a class="navbar-brand" style="font-size: 12px"><button class="clearbutton" onclick="window.location.href = 'http://localhost:4200/#target';">HOW IT WORKS</button></a>
-          <button class="button" style="font-size: 12px" onclick="window.location.href = 'http://localhost:4200/classify';">FIND DIAGNOSIS </button>
-        </form>
-      </nav>
       <div class="homestyle">
           <h1 class="h1text">PRELIMINARY DIAGNOSIS</h1>
           <h6 class="subtext">Understand in a quick, at home format, the potential issues you may be facing</h6>
-          <button class="button" onclick="window.location.href = 'http://localhost:4200/classify';">USE IMAGE</button>
-          <button class="button" onclick="window.location.href = 'http://localhost:4200/classify';">DIAGNOSIS</button>
+          <button class="button" routerLink="../classify">USE IMAGE</button>
+          <button class="button" routerLink="../classify">DIAGNOSIS</button>
       </div>
       <div class="information">
           <h1 class="informationheader"><a id="target"><b>HOW IT WORKS</b></a></h1>
