@@ -1,6 +1,4 @@
  
-
-
 train_images;
 train_labels;
 # create the training datasets
